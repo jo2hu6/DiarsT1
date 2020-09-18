@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear persona</h1>
+<form action="/Persona/Create" method="post">
+    <label>Nombre</label>
+    <input class="form-control" name="NombrePersona" value="@Model.NombrePersona" />
+    @Html.ValidationMessage("Nombre")
+    @Html.ValidationMessage("_nombre")
+    <hr />
+    <label>Apellido</label>
+    <input class="form-control" name="ApellidoPersona" value="@Model.ApellidoPersona" />
+    @Html.ValidationMessage("Persona")
+    @Html.ValidationMessage("_apellido")
+    <hr />
+    <label>Fecha de Nacimiento</label>
+    <input class="form-control" name="FechaNacimiento" value="@Model.FechaNacimiento" />
+    @Html.ValidationMessage("FechaNacimiento")
+    <hr />
+    <label>DNI</label>
+    <input class="form-control" name="Dni" value="@Model.Dni" />
+    @Html.ValidationMessage("Dni")
+    @Html.ValidationMessage("_dni")
+    <hr />
+    <label>Genero</label>
+    <select>
+        <option>Seleccione: </option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>
+    <hr />
+    <label>Ciudad</label>
+    <select>
+        <option>Elije opcion</option>
+        <option></option>
+        @foreach (var city in ViewBag.Ciudades)
+        {
+            <option value="@city.NombreCiudad">@city.NombreCiudad</option>
+        }
+    </select>
+    <hr />
+    <label>Direccion</label>
+    <input class="form-control" name="Direccion" value="@Model.Direccion" />
+    @Html.ValidationMessage("Direccion")
+    <hr />
+    <label>Correo electronico</label>
+    <input class="form-control" name="Email" value="@Model.Email" />
+    @Html.ValidationMessage("Email")
+    <hr />
+    <label>Usuario</label>
+    <input class="form-control" name="Username" value="@Model.Username" />
+    @Html.ValidationMessage("Username")
+    <hr />
+    <label>Contraseña</label>
+    <input class="form-control" type="password" name="Password" value="@Model.Password" />
+    @Html.ValidationMessage("Password")
+    <a href="/Persona/Index" class="btn btn-outline-danger" style="margin-left: 1000px; margin-top:20px;">Cancelar</a>
+    <button class="btn btn-outline-dark" style="margin-left: 900px; margin-top:-65px;">Crear</button>
+</form>
+

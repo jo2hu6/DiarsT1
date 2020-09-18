@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de personas</h1>
+
+<a class="btn btn-outline-dark" href="/Persona/Create" style="margin-left: 1000px; margin-bottom:50px;">Crear</a>
+
+<table style="margin-top:-45px" class="table table-dark">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de nacimiento</th>
+            <th>DNI</th>
+            <th>Genero</th>
+            <th>Ciudad</th>
+            <th>Direccion</th>
+            <th>Correo electronico</th>
+            <th>Usuario</th>
+            <th>Contraseña</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.NombrePersona</td>
+                <td>@i.ApellidoPersona</td>
+                <td>@i.FechaNacimiento</td>
+                <td>@i.Dni</td>
+                <td>@i.Genero</td>
+                <td>@i.Ciudad</td>
+                <td>@i.Direccion</td>
+                <td>@i.Email</td>
+                <td>@i.Username</td>
+                <td>@i.Password</td>
+                <td>
+                    <a class="btn btn-outline-warning" href="/Persona/Update?id=@i.IdPersona">Editar</a>
+                    <a class="btn btn-outline-danger" href="/Persona/Delete?id=@i.IdPersona">Eliminar</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+
+</table>

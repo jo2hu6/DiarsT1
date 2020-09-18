@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Editar persona</h1>
+<form action="/Persona/Update" method="post">
+
+    <input type="hidden" class="form-control" name="IdPersona" value="@Model.IdPersona" />
+
+    <label>Nombre</label>
+    <input class="form-control" name="NombrePersona" value="@Model.NombrePersona" />
+
+    <label>Apellido</label>
+    <input class="form-control" name="ApellidoPersona" value="@Model.ApellidoPersona" />
+
+    <label>Fecha de Nacimiento</label>
+    <input class="form-control" name="FechaNacimiento" value="@Model.FechaNacimiento" />
+
+    <label>DNI</label>
+    <input class="form-control" name="Dni" value="@Model.Dni" />
+
+    <label>Genero</label>
+    <select>
+        <option>Seleccione: </option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>
+    <label>Ciudad</label>
+    <select>
+        <option>Elije opcion</option>
+        <option></option>
+        @foreach (var city in ViewBag.Ciudades)
+        {
+            <option value="@city.NombreCiudad">@city.NombreCiudad</option>
+        }
+    </select>
+    <hr />
+    <label>Direccion</label>
+    <input class="form-control" name="Direccion" value="@Model.Direccion" />
+
+    <label>Correo electronico</label>
+    <input class="form-control" name="Email" value="@Model.Email" />
+
+    <label>Usuario</label>
+    <input class="form-control" name="Username" value="@Model.Username" />
+
+    <label>Contraseña</label>
+    <input class="form-control" name="Password" value="@Model.Password" />
+
+    <a href="/Persona/Index" class="btn btn-outline-danger" style="margin-left: 1000px; margin-top:20px;">Cancelar</a>
+    <button class="btn btn-outline-dark" style="margin-left: 900px; margin-top:-65px;">Guardar</button>
+</form>
+
